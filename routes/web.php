@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+//Route::get('/', function () {
+//    return view('index');
+//});
+//Route::resource('/',MainRestController::class);
+Route::get('/', [MainController::class , 'index']);
+Route::get('/product', [MainController::class , 'product']);
